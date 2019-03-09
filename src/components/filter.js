@@ -14,7 +14,7 @@ const Filter = ({ type, name, label, cls, title, isActive, onChange }) => (
 );
 
 Filter.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
