@@ -1,13 +1,26 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function Filter(props) {
-  const { id, label, cls, title } = props;
-  return (
-    <label title={title} className={cls}>
-      <input type="checkbox" />
-      <i className="title fa">{label}</i>
-    </label>
-  );
-}
+const Filter = ({ type, name, label, cls, title, isActive, onChange }) => (
+  <label title={title} className={cls}>
+    <input
+      type={type}
+      defaultChecked={isActive}
+      onChange={onChange}
+      placeholder={title}
+    />
+    <i className="title fa">{label}</i>
+  </label>
+);
+
+Filter.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  cls: PropTypes.string.isRequired,
+  isActive: PropTypes.bool.isRequired
+};
 
 export default Filter;
