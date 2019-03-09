@@ -5,6 +5,9 @@ html {
 a {
   color: #08a;
 }
+hr {
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+}
 .clear {
   clear: both;
 }
@@ -33,7 +36,20 @@ a {
     font-size: 14px;
   }
   .rating {
-    display: none;
+    //display: none;
+    font-size: 10px;
+    width: 47px;
+    &:before {
+      left: -46px;
+    }
+    @for $s from 0 through 5 {
+      &.stars-#{$s}:before {
+        left: -45px + $s * 9px;
+      }
+    }
+    &.stars-1:before {
+      left: -37px;
+    }
   }
   .text {
     border: none;
@@ -80,6 +96,9 @@ a {
     &.stars-#{$s}:before {
       left: -75px + $s * 15px;
     }
+  }
+  &.none {
+    display: none;
   }
 }
 .text {
@@ -129,15 +148,24 @@ a {
     cursor: pointer;
     font-size: 12px;
     margin-right: 4px;
-    &.star {
+    &.star,
+    &.no-star {
+      color: gold;
       input + i:before {
         content: "\f005";
         margin-right: 0;
-        color: gold;
       }
       input:checked + i:before {
         content: "\f006";
         margin-right: 0;
+      }
+    }
+    &.no-star {
+      input + i:before {
+        content: "\f05e";
+      }
+      input:checked + i:before {
+        content: "\f05e";
       }
     }
   }
