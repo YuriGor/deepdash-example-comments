@@ -10,7 +10,6 @@ const getFilteredData = (data, filter) => {
     // console.log("empty filter");
     return data;
   }
-  // console.log(filter);
 
   return _.filterDeep(
     data,
