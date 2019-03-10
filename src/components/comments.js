@@ -39,7 +39,8 @@ const Comments = ({ data, filterText }) => (
 );
 
 Comments.propTypes = {
-  dataonClick: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
+  filterText: PropTypes.string.isRequired
 };
 
 export default Comments;
