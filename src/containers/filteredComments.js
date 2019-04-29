@@ -1,8 +1,9 @@
-import lodash from "lodash";
-import deepdash from "deepdash";
+import lodash from "lodash-es";
+import addFilterDeep from "deepdash-es/addFilterDeep";
 import { connect } from "react-redux";
 import Comments from "../components/comments";
-const _ = deepdash(lodash);
+// console.log(deepdash);
+const _ = addFilterDeep(lodash);
 
 const getFilteredData = (data, filter) => {
   let ratingChanged = _.some(filter.rating);
@@ -21,7 +22,7 @@ const getFilteredData = (data, filter) => {
         (!filter.text || _.includes(c.text.toLowerCase(), filter.text))
       );
     },
-    { tree: { children: "replies" } }
+    { childrenPath: "replies" }
   );
 };
 

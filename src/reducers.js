@@ -1,4 +1,4 @@
-import _ from "lodash";
+import _ from "lodash-es";
 import { FILTER_SET } from "./actions";
 
 const initialState = {

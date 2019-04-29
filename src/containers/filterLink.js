@@ -1,4 +1,4 @@
-import _ from "lodash";
+import _ from "lodash-es";
 import { connect } from "react-redux";
 import { setFilter } from "../actions";
 import Filter from "../components/filter";
