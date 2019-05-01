@@ -13,7 +13,7 @@ const highlightFilterText = (text, filterText) => {
   return { __html: text };
 };
 const Comments = ({ data, filterText }) => (
-  <div id="comments">
+  <div className="comments">
     {data.map(d => (
       <div key={d.key} className="comment">
         <div className={"fa author" + (d.verified ? " verified" : "")}>

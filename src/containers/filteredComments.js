@@ -23,7 +23,7 @@ const getFilteredData = (data, filter) => {
       );
     },
     { childrenPath: "replies" }
-  );
+  )||[];
 };
 
 const mapStateToProps = state => {

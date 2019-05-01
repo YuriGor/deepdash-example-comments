@@ -1,6 +1,11 @@
 html {
   background-color: #0c2233;
   color: #fff;
+  text-align: center;
+}
+body{
+  display: inline-block;
+  text-align: left;
 }
 a {
   color: #08a;
@@ -16,8 +21,8 @@ hr {
   margin-bottom: 20px;
   max-width: 500px;
 }
-#comments {
-  //padding:15px;
+#root>.comments>.comment {
+  width: 100%;
 }
 .comment {
   background-color: rgba(#000, 0.3);
@@ -26,13 +31,12 @@ hr {
   margin: 5px;
   float: left;
   clear: both;
-  min-width: 400px;
 }
 .replies .comment {
   border: none;
   //border-left: 1px dashed rgba(#FFF,0.5);
   float: right;
-  min-width: 200px;
+  min-width: 100px;
   .author {
     font-size: 14px;
   }
